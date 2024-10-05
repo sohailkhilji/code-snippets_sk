@@ -1,0 +1,25 @@
+This Business Rule triggers an event and notification when a MID Server's status is updated to 'Down.' 
+It ensures that designated groups are promptly informed of any MID Server outages.
+
+Go to: System Notification > Email > Notifications
+Create a new notification:
+Name: Notify on MID Server Down
+Table: ecc_agent
+Condition : Status is Down
+
+
+Who will Recieve: (Set group or user)
+
+What it will contain:
+Subject : Mid server Down : ${name}
+Message HTML:
+
+
+Kind Attention :
+Below Mid server status is Down. Kindly action.
+
+Mid Server Name : ${name}
+Mid Server IP: p_address}
+Host name: ${host_name}
+Last refreshed: ${last_refreshed}
+
